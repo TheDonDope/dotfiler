@@ -1,3 +1,25 @@
 #!/bin/bash
 
 # User overrides to add to your `~/.bashrc`
+
+# Add userscripts to path
+export SCRIPTS="$HOME/.local/bin"
+export PATH="$SCRIPTS:$PATH"
+
+# Configure NeoVIM
+export PATH="$PATH:/opt/nvim-linux64/bin"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+
+# Configure Obsidian
+export SECOND_BRAIN="/mnt/c/Users/idont/iCloudDrive/iCloud~md~obsidian/second-brain/"
+alias brain="cd $SECOND_BRAIN" 
+
+# Configure SSH
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+# Init Rust
+. "$HOME/.cargo/env"
+
