@@ -1,0 +1,56 @@
+#!/bin/zsh
+
+# User configuration
+
+# Fix $PATH for homebrew
+homebrew=/usr/local/bin:usr/local/sbin
+export PATH=$homebrew:$PATH
+
+# Add go binaries to PATH
+gobins=~/go/bin
+export PATH=$gobins:$PATH
+
+# Init rbenv
+eval "$(rbenv init - zsh)"
+
+# Init pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# Add userscripts to path
+export SCRIPTS="$HOME/.local/bin"
+export PATH="$SCRIPTS:$PATH"
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='nvim'
+ else
+   export EDITOR='nvim'
+ fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+export SECOND_BRAIN="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/second-brain"
+alias brain="cd \"$SECOND_BRAIN\""
+
