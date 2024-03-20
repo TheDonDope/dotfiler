@@ -20,6 +20,9 @@ alias brain="cd $SECOND_BRAIN"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 
+# Init Go
+export PATH=$PATH:/usr/local/go/bin
+
 # Init Rust
 . "$HOME/.cargo/env"
 
