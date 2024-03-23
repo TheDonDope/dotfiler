@@ -14,7 +14,7 @@ alias vim="nvim"
 
 # Configure Obsidian
 export SECOND_BRAIN="/mnt/c/Users/idont/iCloudDrive/iCloud~md~obsidian/second-brain/"
-alias brain="cd $SECOND_BRAIN" 
+alias brain="cd $SECOND_BRAIN"
 
 # Configure SSH
 eval "$(ssh-agent -s)"
@@ -26,3 +26,4 @@ export PATH=$PATH:/usr/local/go/bin
 # Init Rust
 . "$HOME/.cargo/env"
 
+eval "$(starship init bash)"
