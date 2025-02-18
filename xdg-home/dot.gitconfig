@@ -1,0 +1,21 @@
+[user]
+	email = thedondope@hey.com
+	name = Christian Dobert
+[pull]
+	rebase = true
+[branch]
+	autosetupmerge = true
+	autosetuprebase = always
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = nvim
+[diff]
+	tool = nvimdiff
+
+[difftool "nvimdiff"]
+	cmd = nvim -d "$LOCAL" "$REMOTE"
+[merge]
+	tool = nvimdiff
+[mergetool "nvimdiff"]
+	cmd = nvim -d "$LOCAL" "$BASE" "$REMOTE" -c 'wincmd J'
+	prompt = false
