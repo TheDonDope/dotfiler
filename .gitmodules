@@ -1,0 +1,6 @@
+[submodule "xdg-home/xdg-config/tmux"]
+	path = xdg-home/xdg-config/tmux
+	url = git@github.com:TheDonDope/tmuxrc.git
+[submodule "xdg-home/xdg-config/nvim"]
+	path = xdg-home/xdg-config/nvim
+	url = git@github.com:TheDonDope/kickstart-modular.nvim.git
