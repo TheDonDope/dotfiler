@@ -55,6 +55,12 @@ TODO
 
 TODO
 
+#### Nushell stuff to fix
+
+- SSH: Adding ssh-agent to startup (no `eval()` in nushell)
+- Python: Configuring/Rehashing pyenv (no `eval()` in nushell)
+- Ruby: Configuring/Rehashing rbenv (no `eval()` in nushell)
+
 ### NeoVIM
 
 These are managed in a separate repository: [TheDonDope/kickstart-modular.nvim](https://github.com/TheDonDope/kickstart-modular.nvim) and are symlinked to the config folder by running the `dev` executable.
