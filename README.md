@@ -2,7 +2,7 @@
 
 ## Managing packages with Homebrew
 
-A  [Brewfile](./Brewfile) is provided, containing all packages to be installed, *Work in progress*!
+A [Linux Brewfile](./xdg-home/Brewfile) and [MacOS Brewfile](./macos-home/Brewfile) are provided, containing all packages to be installed, *Work in progress*!
 
 ### Exporting to a Brewfile
 
