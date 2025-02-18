@@ -1,5 +1,31 @@
 # Dotfiler
 
+## Managing packages with Homebrew
+
+A  [Brewfile](./Brewfile) is provided, containing all packages to be installed, *Work in progress*!
+
+### Exporting to a Brewfile
+
+- Run:
+
+```shell
+brew bundle dump --file=Brewfile --force
+==> Tapping homebrew/bundle
+Cloning into '/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-bundle'...
+remote: Enumerating objects: 9359, done.
+remote: Counting objects: 100% (588/588), done.
+remote: Compressing objects: 100% (121/121), done.
+remote: Total 9359 (delta 522), reused 467 (delta 467), pack-reused 8771 (from 2)
+Receiving objects: 100% (9359/9359), 2.38 MiB | 12.69 MiB/s, done.
+Resolving deltas: 100% (5379/5379), done.
+Tapped 2 commands (125 files, 3MB).
+==> Downloading https://formulae.brew.sh/api/formula.jws.json
+```
+
+### Importing from a Brewfile
+
+- Run: `brew bundle --file=Brewfile`
+
 ## Config file locations
 
 For Linux (more specifically, following the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/latest/)), user specific config files live here: `~/.config`
