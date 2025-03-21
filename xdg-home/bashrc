@@ -116,27 +116,67 @@ if ! shopt -oq posix; then
   fi
 fi
 
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Fix $PATH for homebrew
+homebrew=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
+export PATH=$homebrew:$PATH
+
+# Add go binaries to PATH
+gobins=~/go/bin
+export PATH=$gobins:$PATH
+
+# Add N to PATH
+export N_PREFIX="$HOME/.n"
+export PATH="$N_PREFIX/bin:$PATH"
+
+# Init rbenv
+eval "$(rbenv init - bash)"
+
+# Init rust
+. "$HOME/.cargo/env"
+
+# Init pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
+
 # Add userscripts to path
 export SCRIPTS="$HOME/.local/bin"
 export PATH="$SCRIPTS:$PATH"
 
-# Configure NeoVIM
-export PATH="$PATH:/opt/nvim-linux64/bin"
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# Configure Obsidian
-export SECOND_BRAIN="/mnt/c/Users/idont/iCloudDrive/iCloud~md~obsidian/second-brain/"
-alias brain="cd $SECOND_BRAIN" 
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-# Configure SSH
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
+# Preferred editor for local and remote sessions
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='nvim'
+ else
+   export EDITOR='nvim'
+ fi
 
-export PATH=$PATH:/usr/local/go/bin
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-# Init Rust
-. "$HOME/.cargo/env"
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias v="nvim"
+# alias vi="nvim"
+# alias vim="nvim"
+# alias bashconfig="nvim ~/.bashrc"
+# export SECOND_BRAIN="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/second-brain"
+# alias brain="cd \"$SECOND_BRAIN\""
 
 eval "$(starship init bash)"
